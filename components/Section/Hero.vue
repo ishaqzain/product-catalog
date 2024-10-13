@@ -2,11 +2,8 @@
   <section class="section-hero">
     <div class="section-hero_layout">
       <div class="section-hero_text">
-        <h2>New Arrival Collection</h2>
-        <p>Iconic brands and artist collection</p>
-      </div>
-      <div class="section-hero_img">
-        <img src="~/assets/img/img-hero.png" alt="image hero">
+        <h2>Product Catalog</h2>
+        <p>Explore our thoughtfully curated collections, perfect for elevating every style, whether for special occasions or everyday wear.</p>
       </div>
     </div>
   </section>
@@ -16,35 +13,34 @@
 </script>
 <style scoped lang="scss">
 .section-hero {
-  min-height: 10vh;
+  min-height: 20vh;
   border-radius: 8px;
   margin: 2rem 0;
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 5%;
 
   &_layout {
     display: grid;
     align-items: center;
-    grid-template-columns: 1fr .5fr;
-    gap: 1.5rem;
+    justify-items: center;
   }
 
   &_text{
     h2 {
-      font-size: 2.5rem;
+      font-size: 1.75rem;
       margin: 0;
-      font-weight: 400;
-      color: var(--primary-text-color)
-      // -webkit-text-fill-color: transparent;
-      // background-image: repeating-linear-gradient(135deg, #72BF78, #007e7c 50%, #5f5ffd);
-      // -webkit-background-clip: text;
-      // background-clip: text;
+      font-weight: 500;
+      color: var(--primary-text-color);
     }
     p {
       margin: .5rem 0 0 0;
       font-size: 1rem;
       font-weight: 400;
       color: var(--secondary-text-color);
+      max-width: 500px;
     }
   }
 }

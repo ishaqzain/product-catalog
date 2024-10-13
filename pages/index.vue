@@ -1,6 +1,7 @@
 <template>
   <div>
     <SectionHero></SectionHero>
+    <Marquee></Marquee>
     <section class="section-product-grid">
       <div v-if="products" class="product-grid">
         <ProductCard v-for="product in products" :key="product.id" :product="product" />

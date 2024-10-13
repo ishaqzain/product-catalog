@@ -21,7 +21,7 @@
   justify-content: space-between;
   position: sticky;
   top: 0;
-  z-index: 9;
+  z-index: 99;
   border-bottom: 1px solid var(--border-color);
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(10px);
