@@ -19,7 +19,6 @@ import { useAsyncData } from 'nuxt/app'
 
 const route = useRoute()
 const productStore = useProductStore()
-// Fetch product data using SSR with error handling
 const { data: product, error } = await useAsyncData(
   `product-${route.params.id}`,
   async () => {

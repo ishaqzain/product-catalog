@@ -12,10 +12,7 @@
 import { useProductStore } from '~/stores/productStore'
 import { useAsyncData } from 'nuxt/app'
 
-// Fetch products using Pinia store
 const productStore = useProductStore()
-
-// Use SSR-safe data fetching
 const { data: products } = await useAsyncData('products', () => productStore.fetchProducts())
 </script>
 
