@@ -8,4 +8,11 @@ export default defineNuxtConfig({
     }
   },
   modules: ['@pinia/nuxt'],
+  css: ['@/assets/css/main.css'],
+  app: {
+    pageTransition: {
+      name: 'fade',
+      mode: 'out-in'
+    }
+  },
 })

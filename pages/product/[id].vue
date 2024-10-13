@@ -3,7 +3,7 @@
     <img :src="product.image" :alt="product.title" class="product-image" />
     <div class="product-info">
       <h1>{{ product.title }}</h1>
-      <p class="price">\${{ product.price.toFixed(2) }}</p>
+      <p class="price">${{ product.price.toFixed(2) }}</p>
       <p>{{ product.description }}</p>
       <NuxtLink to="/">Back to Catalog</NuxtLink>
     </div>

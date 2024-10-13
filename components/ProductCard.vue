@@ -1,12 +1,12 @@
 // components/ProductCard.vue
 <template>
-  <div class="product-card">
-    <NuxtLink :to="`/product/${product.id}`">
-      <img :src="product.image" :alt="product.title" />
-      <h3>{{ product.title }}</h3>
-      <p>\${{ product.price.toFixed(2) }}</p>
-    </NuxtLink>
-  </div>
+  <NuxtLink :to="`/product/${product.id}`">
+    <div class="product-card">
+        <img :src="product.image" :alt="product.title" />
+        <h3>{{ product.title }}</h3>
+        <p>${{ product.price.toFixed(2) }}</p>
+    </div>
+  </NuxtLink>
 </template>
 
 <script setup lang="ts">
