@@ -13,7 +13,7 @@
 </script>
 <style scoped lang="scss">
 .section-hero {
-  min-height: 20vh;
+  min-height: 15vh;
   border-radius: 8px;
   margin: 2rem 0;
   display: flex;

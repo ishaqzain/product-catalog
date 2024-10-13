@@ -1,11 +1,23 @@
 <template>
-  <div v-if="product" class="product-detail">
-    <img :src="product.image" :alt="product.title" class="product-image" />
-    <div class="product-info">
-      <h1>{{ product.title }}</h1>
-      <p class="price">${{ product.price.toFixed(2) }}</p>
-      <p>{{ product.description }}</p>
-      <NuxtLink to="/">Back to Catalog</NuxtLink>
+  <div v-if="product">
+    <div class="breadcrumb"><NuxtLink to="/">Back to catalog</NuxtLink> / {{ product.title }}</div>
+    <div class="product-detail">
+      <div class="product-info">
+        <div class="product-image">
+          <img :src="product.image" :alt="product.title" />
+        </div>
+        <h2 class="product-info_title">{{ product.title }}</h2>
+        <p class="product-info_price">${{ product.price.toFixed(2) }}</p>
+        <p class="product-info_desc">{{ product.description }}</p>
+      </div>
+      <div class="product-action">
+        <h2 class="product-action_title">{{ product.title }}</h2>
+        <span class="product-action_price"> ${{ product.price.toFixed(2) }}</span>
+        <div class="btn-group">
+          <button class="btn btn--outline"> Add to cart</button>
+          <button class="btn"> Buy now</button>
+        </div>
+      </div>
     </div>
   </div>
   <div v-else>Loading product details...</div>
@@ -34,28 +46,94 @@ const { data: product, error } = await useAsyncData(
 </script>
 
 <style scoped lang="scss">
-.product-detail {
-  display: flex;
-  gap: 20px;
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+.product {
+
+  &-info_title {
+     margin-bottom: .5rem;
+  }
+  &-detail {
+    margin-top: 2rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr .5fr;
+    align-items: start;
+  }
+
+  &-image {
+    height: auto;
+    object-fit: contain;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    padding: 10%;
+    border-radius: 8px;
+  }
+
+  &-action {
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    border-radius: 8px;
+    position: sticky;
+    top: 6rem;
+
+    &_price{
+      display: block;
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    &_title {
+      font-size: 1rem;
+      margin:0 0 1rem 0;
+      font-weight: 400;
+    }
+  }
+
+  &-info{
+    &_price {
+      color: #e63946;
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 0;
+    }
+  }
 }
 
-.product-image {
-  max-width: 300px;
-  height: auto;
-  object-fit: contain;
-}
+// media query mobile
+@media only screen and (max-width: 600px) {
+  .product {
+    &-info {
+      margin-bottom: 4rem;
+    }
 
-.product-info {
-  flex: 1;
-}
+    &-detail {
+      grid-template-columns: 1fr;
+    }
+    &-action {
+      position: fixed;
+      width: auto;
+      margin: auto;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+      bottom: 0;
+      height: auto;
+      top: auto;
+      box-shadow: rgba(17, 12, 46, 0.15) 0px 0px 100px 0px;
 
-.price {
-  color: #e63946;
-  font-size: 24px;
-  font-weight: bold;
+      &_title {
+        display: none;
+      }
+
+      &_price {
+        display: none;
+      }
+    }
+  }
+  .btn-group {
+    flex-direction: row;
+  }
 }
 </style>
