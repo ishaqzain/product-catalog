@@ -21,6 +21,7 @@ defineProps<{ product: Product }>()
   padding: 16px;
   text-align: center;
   transition: all 0.3s;
+  background-color: var(--white);
 
   &_img {
     max-width: 100%;

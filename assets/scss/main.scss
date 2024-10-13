@@ -7,6 +7,7 @@
   --secondary-text-color:#57636C;
   --border-color: #ededed;
   --white: #ffffff;
+  --primary-bg-color: var(--white);
 }
 
 /* General */
@@ -15,10 +16,17 @@ body {
  margin: 0;
  padding: 0;
  font-size: 16px;
+ background-color: var(--primary-bg-color);
 }
 
 a {
   text-decoration: none;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  display: inline-block;
 }
 
 /* font face */

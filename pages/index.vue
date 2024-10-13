@@ -1,10 +1,12 @@
 <template>
   <div>
-    <h1>Product Catalog</h1>
-    <div v-if="products" class="product-grid">
-      <ProductCard v-for="product in products" :key="product.id" :product="product" />
-    </div>
-    <div v-else>Loading products...</div>
+    <SectionHero></SectionHero>
+    <section class="section-product-grid">
+      <div v-if="products" class="product-grid">
+        <ProductCard v-for="product in products" :key="product.id" :product="product" />
+      </div>
+      <div v-else>Loading products...</div>
+    </section>
   </div>
 </template>
 
